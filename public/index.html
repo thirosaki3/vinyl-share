@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinyl Share 🎵</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-icon">🎵</span>
+      <span class="logo-text">Vinyl Share</span>
+    </div>
+    <p class="header-sub">みんなのレコードコレクション</p>
+  </div>
+</header>
+
+<main class="main-content">
+  <!-- ローディング -->
+  <div id="loading" class="loading-state">
+    <div class="spinner"></div>
+    <p>レコードを読み込んでいます...</p>
+  </div>
+
+  <!-- エラー -->
+  <div id="error" class="error-state" style="display:none">
+    <p>⚠️ データの読み込みに失敗しました。</p>
+    <button onclick="loadRecords()">再試行</button>
+  </div>
+
+  <!-- レコード数カウンター -->
+  <div id="stats" class="stats-bar" style="display:none">
+    <span id="record-count"></span>
+  </div>
+
+  <!-- レコードグリッド -->
+  <div id="records-grid" class="records-grid" style="display:none"></div>
+
+  <!-- 空状態 -->
+  <div id="empty" class="empty-state" style="display:none">
+    <p>🎶 まだレコードが登録されていません。</p>
+  </div>
+</main>
+
+<!-- レコード詳細モーダル -->
+<div id="modal" class="modal-overlay" style="display:none" onclick="closeModal(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
